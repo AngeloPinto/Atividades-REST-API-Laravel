@@ -65,7 +65,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    // 'timezone' => 'UTC',
+    'timezone' => 'America/Manaus', // Incluido em (17/12/2019) - Angelo R. Pinto
 
     /*
     |--------------------------------------------------------------------------

@@ -25,3 +25,6 @@ Route::get    ('/api/atividade/{id}' , ['as' => 'atividade.show'  , 'uses' => 'A
 Route::post   ('/api/atividade'      , ['as' => 'atividade.create' , 'uses' => 'AtividadeController@create']);
 Route::put    ('/api/atividade/{id}' , ['as' => 'atividade.update' , 'uses' => 'AtividadeController@update']);
 Route::delete ('/api/atividade/{id}' , ['as' => 'atividade.delete' , 'uses' => 'AtividadeController@delete']);
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
