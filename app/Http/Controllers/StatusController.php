@@ -8,7 +8,7 @@ use App\Status;
 class StatusController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Retorna a lista de Status
      *
      * @return \Illuminate\Http\Response
      */

@@ -18,3 +18,7 @@ Route::get('/', function () {
 
 Route::get ('/api/status'      , ['as' => 'status.index'     , 'uses' => 'StatusController@index']);
 Route::get ('/api/responsavel' , ['as' => 'responsavel.index', 'uses' => 'ResponsavelController@index']);
+
+Route::get    ('/api/atividade'      , ['as' => 'atividade.index'  , 'uses' => 'AtividadeController@index']);
+Route::post   ('/api/atividade'      , ['as' => 'atividade.create' , 'uses' => 'AtividadeController@create']);
+Route::delete ('/api/atividade/{id}' , ['as' => 'atividade.delete' , 'uses' => 'AtividadeController@delete']);
