@@ -57,6 +57,13 @@ class AtividadeController extends Controller
     public function show($id)
     {
         $atividade = Atividade::find($id);
+
+        if(!$atividade) {
+            return response()->json([
+                'message'   => 'Atividade não encontrada',
+            ], 404);
+        }
+                
         return $atividade;
     }
 
@@ -70,6 +77,12 @@ class AtividadeController extends Controller
     {
         // Cria um novo objeto Atividade
         $atividade = Atividade::find($id);
+
+        if(!$atividade) {
+            return response()->json([
+                'message'   => 'Atividade não encontrada',
+            ], 404);
+        }        
 
         // Retorna o Objeto
         return $atividade;
@@ -90,6 +103,12 @@ class AtividadeController extends Controller
         // Cria um novo objeto Atividade
         $atividade = Atividade::find($id);
 
+        if(!$atividade) {
+            return response()->json([
+                'message'   => 'Atividade não encontrada',
+            ], 404);
+        }
+
         $atividade = $this->salvar($atividade, $data);
 
         // Retorna o Objeto
@@ -105,6 +124,12 @@ class AtividadeController extends Controller
     public function delete($id)
     {
         $atividade = Atividade::find($id);
+
+        if(!$atividade) {
+            return response()->json([
+                'message'   => 'Atividade não encontrada',
+            ], 404);
+        }        
         
         Atividade::destroy($id);
         
