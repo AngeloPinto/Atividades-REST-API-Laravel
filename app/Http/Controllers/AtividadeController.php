@@ -30,13 +30,8 @@ class AtividadeController extends Controller
 
         // Cria um novo objeto Atividade
         $atividade = new Atividade;
-
-        $atividade->atividade      = $data['atividade'];
-        $atividade->responsavel_id = $data['responsavel_id'];
-        $atividade->status_id      = $data['status_id'];
-        $atividade->deadline       = $data['deadline'];
-
-        $atividade->save();
+        
+        $atividade = $this->salvar($atividade, $data);
 
         // Retorna o Objeto
         return $atividade;
@@ -96,12 +91,7 @@ class AtividadeController extends Controller
         // Cria um novo objeto Atividade
         $atividade = Atividade::find($id);
 
-        $atividade->atividade      = $data['atividade'];
-        $atividade->responsavel_id = $data['responsavel_id'];
-        $atividade->status_id      = $data['status_id'];
-        $atividade->deadline       = $data['deadline'];
-
-        $atividade->save();
+        $atividade = $this->salvar($atividade, $data);
 
         // Retorna o Objeto
         return $atividade;        
@@ -115,7 +105,21 @@ class AtividadeController extends Controller
      */
     public function delete($id)
     {
-        Atividade::destroy($id);
-        $this->index();
+        $atividade = Atividade::find($id);
+        $atividade->destroy();
+        return $atividade;
     }
+
+    private function salvar(Atividade $atividade, $dados)
+    {
+        $atividade->atividade      = $dados['atividade'];
+        $atividade->responsavel_id = $dados['responsavel_id'];
+        $atividade->status_id      = $dados['status_id'];
+        $atividade->deadline       = $dados['deadline'];
+
+        $atividade->save();
+
+        return $atividade;
+    }
+
 }
