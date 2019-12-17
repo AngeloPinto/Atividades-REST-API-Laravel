@@ -34,8 +34,7 @@ class AtividadeController extends Controller
         $atividade = $this->salvar($atividade, $data);
 
         // Retorna o Objeto
-        return $atividade;
-
+        return response()->json($atividade, 201);
     }
 
     /**
@@ -94,7 +93,7 @@ class AtividadeController extends Controller
         $atividade = $this->salvar($atividade, $data);
 
         // Retorna o Objeto
-        return $atividade;        
+        return response()->json($atividade, 201);
     }
 
     /**
