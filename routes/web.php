@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get ('/api/status'      , ['as' => 'status.index'     , 'uses' => 'StatusController@index']);
+Route::get ('/api/responsavel' , ['as' => 'responsavel.index', 'uses' => 'ResponsavelController@index']);
