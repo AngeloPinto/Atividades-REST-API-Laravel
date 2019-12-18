@@ -54,7 +54,7 @@
 
 
 
-Method | URI | Action | Middleware
+Method | URI | Name | Action
 -------|-----|--------|-----------
 GET | / |  | Closure
 GET | api/atividade | atividade.index | App\Http\Controllers\AtividadeController@index
