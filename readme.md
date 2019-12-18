@@ -50,4 +50,17 @@
 4. `php artisan serve`
 
 
-# Documentation
+# Routes
+
+
+
+Method | URI | Action | Middleware
+-------|-----|--------|-----------
+GET | / |  | Closure
+GET | api/atividade | atividade.index | App\Http\Controllers\AtividadeController@index
+POST | api/atividade | atividade.create | App\Http\Controllers\AtividadeController@create
+GET | api/atividade/{id} | atividade.show | App\Http\Controllers\AtividadeController@show
+PUT | api/atividade/{id} | atividade.update | App\Http\Controllers\AtividadeController@update
+DELETE | api/atividade/{id} | atividade.delete | App\Http\Controllers\AtividadeController@delete
+GET | api/responsavel | responsavel.index | App\Http\Controllers\ResponsavelController@index
+GET | api/status | status.index | App\Http\Controllers\StatusController@index
